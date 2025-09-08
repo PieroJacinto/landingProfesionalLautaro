@@ -516,14 +516,18 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background: var(--gray-medium);
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-style: italic;
-            text-align: center;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .instructor-photo:hover {
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+            transform: translateY(-5px);
         }
 
         .instructor-info h2 {
@@ -1178,9 +1182,7 @@
         <div class="container">
             <div class="instructor-content">
                 <div>
-                    <div class="instructor-photo">
-                        Foto de Lautaro
-                    </div>
+                    <img src="public/images/laucha1.jpg" alt="Lautaro Scaglione - Guitarrista y Creador del Método FRET GPS" class="instructor-photo">
                 </div>
                 <div class="instructor-info">
                     <h2>Lautaro Scaglione</h2>
