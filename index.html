@@ -8,722 +8,7 @@
     
     <!-- Fuentes idénticas a Frequency -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* Paleta Negro, Azul (#4a90e2), Blanco */
-            --primary-black: #000000;
-            --primary-dark: #111111;
-            --gray-light: #f8f9fa;
-            --gray-medium: #6b7280;
-            --gray-dark: #374151;
-            
-            --accent-blue: #4a90e2;
-            --accent-blue-dark: #3a80d2;
-            
-            --white: #ffffff;
-            
-            /* Tipografía exacta de Frequency */
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background: var(--white);
-            color: var(--gray-dark);
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* HEADER MINIMALISTA */
-        .header {
-            background: var(--white);
-            padding: 1.5rem 0;
-            text-align: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-black);
-            letter-spacing: -0.025em;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(74, 144, 226, 0.1);
-            color: var(--accent-blue);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(74, 144, 226, 0.2);
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.025em;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #9ca3af;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-        }
-
-        .cta-button {
-            background: var(--accent-blue);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            display: inline-block;
-            transition: all 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background: var(--accent-blue-dark);
-            transform: translateY(-1px);
-        }
-
-        .cta-subtitle {
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            color: #9ca3af;
-        }
-
-        /* SECCIÓN PROBLEMA */
-        .problem-section {
-            background: var(--gray-light);
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-            line-height: 1.1;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--gray-medium);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .problem-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
-        }
-
-        .problem-card:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .problem-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-        }
-
-        .problem-card p {
-            color: var(--gray-medium);
-            line-height: 1.6;
-        }
-
-        /* SEPARADOR CON LÍNEA */
-        .divider-section {
-            background: var(--primary-black);
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .divider-line {
-            width: 400px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-        }
-
-        /* MÉTODO FRET GPS - FONDO NEGRO */
-        .method-section {
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .method-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
-
-        .method-subtitle {
-            font-size: 1.25rem;
-            color: #9ca3af;
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .method-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .method-card {
-            background: rgba(17, 17, 17, 0.8);
-            border: 1px solid rgba(74, 144, 226, 0.2);
-            border-radius: 12px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .method-card:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 20px 40px rgba(74, 144, 226, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .method-visual {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(74, 144, 226, 0.1);
-            border-radius: 50%;
-            border: 2px solid var(--accent-blue);
-        }
-
-        .method-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .method-card p {
-            color: #9ca3af;
-            line-height: 1.7;
-        }
-
-        /* TESTIMONIOS CON VIDEOS Y BANDERAS */
-        .testimonials-section {
-            background: var(--gray-light);
-            padding: 6rem 0;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .testimonial-video {
-            width: 100%;
-            height: 200px;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-
-        .testimonial-video iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-        }
-
-        .testimonial-name {
-            font-weight: 600;
-            color: var(--primary-black);
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-country {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--gray-medium);
-        }
-
-        .country-flag {
-            width: 20px;
-            height: 15px;
-            border-radius: 2px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial-text {
-            color: var(--gray-dark);
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        /* PAÍSES CON BANDERAS */
-        .countries-section {
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .countries-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 2rem;
-            letter-spacing: -0.025em;
-        }
-
-        .countries-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .country-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .country-item .country-flag {
-            width: 40px;
-            height: 30px;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .country-name {
-            font-size: 0.875rem;
-            color: #9ca3af;
-            font-weight: 500;
-        }
-
-        /* QUÉ INCLUYE - ESTILO ALTERNADO COMO FREQUENCY */
-        .includes-section {
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .includes-section .section-title {
-            color: var(--white);
-        }
-
-        .includes-section .section-subtitle {
-            color: #9ca3af;
-            margin-bottom: 4rem;
-        }
-
-        .includes-alternating {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .include-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-            padding: 2rem 0;
-        }
-
-        .include-row.reverse {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .include-row.reverse .include-image {
-            order: 2;
-        }
-
-        .include-row.reverse .include-text {
-            order: 1;
-        }
-
-        .include-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .include-placeholder {
-            width: 100%;
-            height: 250px;
-            background: rgba(17, 17, 17, 0.8);
-            border: 2px dashed rgba(74, 144, 226, 0.3);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-style: italic;
-            text-align: center;
-        }
-
-        .include-text {
-            text-align: left;
-        }
-
-        .include-text h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
-
-        .include-text p {
-            font-size: 1.125rem;
-            color: #9ca3af;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .include-text ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .include-text li {
-            color: #e5e7eb;
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .include-text li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-            font-weight: bold;
-        }
-
-        /* INSTRUCTOR */
-        .instructor-section {
-            background: var(--gray-light);
-            padding: 6rem 0;
-        }
-
-        .instructor-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .instructor-photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: block;
-            object-fit: cover;
-            object-position: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 4px solid var(--white);
-            transition: all 0.3s ease;
-        }
-
-        .instructor-photo:hover {
-            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .instructor-info h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-black);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
-        }
-
-        .instructor-title {
-            color: var(--accent-blue);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-
-        .instructor-bio {
-            color: var(--gray-medium);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .instructor-quote {
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--accent-blue);
-            border-left: 3px solid var(--accent-blue);
-            padding-left: 1.5rem;
-            font-weight: 500;
-        }
-
-        /* CTA FINAL */
-        .final-cta {
-            background: var(--primary-black);
-            color: var(--white);
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
-
-        .final-cta p {
-            font-size: 1.25rem;
-            color: #9ca3af;
-            margin-bottom: 3rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .cta-secondary:hover {
-            background: var(--white);
-            color: var(--primary-black);
-        }
-
-        /* FOOTER */
-        .footer {
-            background: var(--gray-light);
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .footer p {
-            color: var(--gray-medium);
-            font-size: 0.875rem;
-        }
-
-        /* WHATSAPP FLOTANTE */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: transform 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        .include-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .include-img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(74, 144, 226, 0.2);
-        }
-
-
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 3rem 0;
-            }
-            
-            .problem-section,
-            .method-section,
-            .testimonials-section,
-            .countries-section,
-            .includes-section,
-            .instructor-section {
-                padding: 4rem 0;
-            }
-            
-            .instructor-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .instructor-photo {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .cta-button,
-            .cta-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .countries-grid {
-                gap: 1rem;
-            }
-
-            .country-item .country-flag {
-                width: 32px;
-                height: 24px;
-            }
-
-            .include-row,
-            .include-row.reverse {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .include-row.reverse .include-image,
-            .include-row.reverse .include-text {
-                order: unset;
-            }
-
-            .include-text {
-                text-align: center;
-            }
-
-            .include-placeholder {
-                height: 200px;
-            }
-            .include-img {
-            height: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./public/css/style.css">
 </head>
 
 <body>
@@ -744,7 +29,7 @@
             <h1 class="hero-title">Visualizá el mástil e improvisá con fluidez</h1>
             
             <p class="hero-subtitle">
-                Programa FRET GPS para guitarristas intermedios que quieren desarrollar su propia voz en la improvisación y dejar de tocar siempre lo mismo
+                Aprendé a estudiar el instrumento en profundidad, con un método claro, ordenado y con un seguimiento 100% personalizado adaptado a tu manera de tocar e intereses particulares
             </p>
             
             <a href="https://calendly.com/lautaroguitarra/sesion-de-claridad" class="cta-button" target="_blank">
@@ -795,7 +80,7 @@
     <!-- MÉTODO FRET GPS - FONDO NEGRO -->
     <section class="method-section">
         <div class="container">
-            <h2 class="method-title">Cuál es nuestro proceso</h2>
+            <h2 class="method-title">¿ Cómo trabajo ?</h2>
             <p class="method-subtitle">6 etapas para desarrollar tu voz única en la improvisación</p>
             
             <div class="method-grid">
@@ -888,42 +173,22 @@
         </div>
     </section>
 
-    <!-- TESTIMONIOS CON VIDEOS Y BANDERAS -->
+    <!-- TESTIMONIOS CON VIDEOS Y BANDERAS -->    
     <section class="testimonials-section">
         <div class="container">
             <h2 class="section-title">Lo que dicen mis alumnos</h2>
             <p class="section-subtitle">Testimonios reales de guitarristas de toda Hispanoamérica</p>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-video">
-                        <iframe src="https://www.youtube.com/embed/u2WGH6PE1t8" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">M</div>
-                        <div>
-                            <div class="testimonial-name">Miguel Rodríguez</div>
-                            <div class="testimonial-country">
-                                <svg class="country-flag" viewBox="0 0 20 15" fill="none">
-                                    <rect width="20" height="5" fill="#AA151B"/>
-                                    <rect y="5" width="20" height="5" fill="#F1BF00"/>
-                                    <rect y="10" width="20" height="5" fill="#AA151B"/>
-                                </svg>
-                                <span>España</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"El método FRET GPS cambió completamente mi forma de ver el mástil. Ahora improviso con confianza y cada solo tiene mi personalidad única."</p>
-                </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-video">
                         <iframe src="https://www.youtube.com/embed/9sIFDEDAnEA" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">C</div>
+                        <div class="testimonial-avatar">H</div>
                         <div>
-                            <div class="testimonial-name">Carlos Mendoza</div>
+                            <div class="testimonial-name">Héctor</div>
                             <div class="testimonial-country">
                                 <svg class="country-flag" viewBox="0 0 20 15" fill="none">
                                     <rect width="20" height="5" fill="#006847"/>
@@ -934,17 +199,60 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Después de años tocando las mismas escalas, finalmente encontré mi voz. Lautaro me enseñó a pensar la música de manera diferente."</p>
+                    <p class="testimonial-text">"Ahora puedo analizar música y tocar escalas improvisando en cualquier tonalidad"</p>
                 </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/u2WGH6PE1t8" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Manu</div>
+                            <div class="testimonial-country">
+                                <svg class="country-flag" viewBox="0 0 20 15" fill="none">
+                                    <rect width="20" height="5" fill="#74ACDF"/>
+                                    <rect y="5" width="20" height="5" fill="#FFFFFF"/>
+                                    <rect y="10" width="20" height="5" fill="#74ACDF"/>
+                                </svg>
+                                <span>Argentina</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Hay una abismal diferencia entre mi yo de antes y el de ahora, nunca progresé tanto en mi vida"</p>
+                </div>
+                
+               
                 
                 <div class="testimonial-card">
                     <div class="testimonial-video">
                         <iframe src="https://www.youtube.com/embed/8vBR6BB2OMc" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="testimonial-header">
+                        <div class="testimonial-avatar">H</div>
+                        <div>
+                            <div class="testimonial-name">Helvis</div>
+                            <div class="testimonial-country">
+                                <svg class="country-flag" viewBox="0 0 20 15" fill="none">
+                                    <rect width="20" height="5" fill="#AA151B"/>
+                                    <rect y="5" width="20" height="5" fill="#F1BF00"/>
+                                    <rect y="10" width="20" height="5" fill="#AA151B"/>
+                                </svg>
+                                <span>España</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Estoy sorprendido de la manera que te adaptas al alumno, tu manera de escuchar y siempre explicas desde la música. Nunca vimos algo que no tenga relación con lo anterior"</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-video">
+                        <iframe src="https://www.youtube.com/embed/LK0--pJo0jk" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="testimonial-header">
                         <div class="testimonial-avatar">A</div>
                         <div>
-                            <div class="testimonial-name">Ana Gutierrez</div>
+                            <div class="testimonial-name">Alex</div>
                             <div class="testimonial-country">
                                 <svg class="country-flag" viewBox="0 0 20 15" fill="none">
                                     <rect width="20" height="5" fill="#0052A5"/>
@@ -955,28 +263,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Ya no toco al azar. Cada nota que elijo tiene propósito y mi improvisación cuenta una historia real."</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-video">
-                        <iframe src="https://www.youtube.com/embed/LK0--pJo0jk" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">J</div>
-                        <div>
-                            <div class="testimonial-name">Javier López</div>
-                            <div class="testimonial-country">
-                                <svg class="country-flag" viewBox="0 0 20 15" fill="none">
-                                    <rect width="20" height="5" fill="#0038A8"/>
-                                    <rect y="5" width="20" height="5" fill="#FFFFFF"/>
-                                    <rect y="10" width="20" height="5" fill="#0038A8"/>
-                                </svg>
-                                <span>Uruguay</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"La visualización del mástil que enseña Lautaro es increíble. Ahora me muevo por toda la guitarra con total libertad."</p>
+                    <p class="testimonial-text">"Me sorprendió el modo en el explicas las escalas, nunca las había pensado así. Me desbloqueaste algo que sentí que nunca iba a aprender"</p>
                 </div>
                 
                 <div class="testimonial-card">
@@ -984,20 +271,20 @@
                         <iframe src="https://www.youtube.com/embed/gtiflgc2gEY" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">L</div>
+                        <div class="testimonial-avatar">A</div>
                         <div>
-                            <div class="testimonial-name">Laura Morales</div>
+                            <div class="testimonial-name">Ariel</div>
                             <div class="testimonial-country">
                                 <svg class="country-flag" viewBox="0 0 20 15" fill="none">
-                                    <rect width="20" height="5" fill="#FDE047"/>
-                                    <rect y="5" width="20" height="5" fill="#0EA5E9"/>
-                                    <rect y="10" width="20" height="5" fill="#DC2626"/>
+                                    <rect width="20" height="5" fill="#74ACDF"/>
+                                    <rect y="5" width="20" height="5" fill="#FFFFFF"/>
+                                    <rect y="10" width="20" height="5" fill="#74ACDF"/>
                                 </svg>
-                                <span>Colombia</span>
+                                <span>Argentina</span>
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Estaba estancada en mi improvisación. Con FRET GPS desarrollé mi propio estilo y ahora toco con emoción real."</p>
+                    <p class="testimonial-text">"Reduje el tiempo de improvisar y resolver las cosas de 1 hora a solo 10 minutos"</p>
                 </div>
                 
                 <div class="testimonial-card">
@@ -1005,20 +292,20 @@
                         <iframe src="https://www.youtube.com/embed/3S9744PwC5w" title="Testimonio Alumno FRET GPS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-avatar">G</div>
                         <div>
-                            <div class="testimonial-name">Roberto Silva</div>
+                            <div class="testimonial-name">Guillermo Ariel</div>
                             <div class="testimonial-country">
                                 <svg class="country-flag" viewBox="0 0 20 15" fill="none">
-                                    <rect width="20" height="5" fill="#DC2626"/>
+                                    <rect width="20" height="5" fill="#74ACDF"/>
                                     <rect y="5" width="20" height="5" fill="#FFFFFF"/>
-                                    <rect y="10" width="20" height="5" fill="#DC2626"/>
+                                    <rect y="10" width="20" height="5" fill="#74ACDF"/>
                                 </svg>
-                                <span>Perú</span>
+                                <span>Argentina</span>
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"El programa superó mis expectativas. No solo mejoré técnicamente, sino que encontré mi identidad como guitarrista."</p>
+                    <p class="testimonial-text">"Noté que avancé todo lo que no pude estos años"</p>
                 </div>
             </div>
         </div>
