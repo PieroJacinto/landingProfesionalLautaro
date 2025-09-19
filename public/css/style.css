@@ -777,58 +777,71 @@ body {
     height: 24px;
   }
 
-  /* INCLUDES SECTION - SOLUCIÓN DEFINITIVA */
-  .includes-section {
-    padding: 4rem 0;
+  /* SECCIÓN INCLUDES - FIX MÓVILES FORZADO */
+  .includes-section .include-row {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 1rem !important;
+    margin-bottom: 3rem !important;
+    align-items: center !important;
   }
 
-  .includes-alternating {
-    display: block;
+  .includes-section .include-row.reverse {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
   }
 
-  .include-row {
-    display: block;
-    margin-bottom: 4rem;
-    padding: 0;
+  /* ORDEN ESPECÍFICO */
+  .includes-section .include-row .include-text {
+    order: 1 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
   }
 
-  .include-row.reverse {
-    display: block;
+  .includes-section .include-row.reverse .include-text {
+    order: 1 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
   }
 
-  .include-row .include-image,
-  .include-row .include-text,
-  .include-row.reverse .include-image,
-  .include-row.reverse .include-text {
-    display: block;
-    width: 100%;
-    margin-bottom: 2rem;
-    order: unset;
+  .includes-section .include-row .include-image {
+    order: 2 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .includes-section .include-row.reverse .include-image {
+    order: 2 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .include-img {
-    height: 200px;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 2rem auto;
-    display: block;
-  }
-
-  .include-text {
-    text-align: center;
+    height: 200px !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 
   .include-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
   }
 
   .include-text p {
-    font-size: 1rem;
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .include-text ul {
-    text-align: left;
-    max-width: 280px;
-    margin: 0 auto;
+    text-align: left !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
   }
 }
