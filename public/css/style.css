@@ -711,11 +711,12 @@ body {
   font-weight: 400;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE COMPLETE REWRITE */
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 0;
   }
+  
   .hero-video {
     margin: 2rem auto;
     max-width: 100%;
@@ -732,15 +733,18 @@ body {
     padding: 1rem 2rem;
     font-size: 1rem;
   }
+
+  /* SECCIONES GENERALES */
   .problem-section,
   .method-section,
   .testimonials-section,
   .countries-section,
-  .includes-section,
-  .instructor-section {
+  .instructor-section,
+  .final-cta {
     padding: 4rem 0;
   }
 
+  /* INSTRUCTOR */
   .instructor-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -751,6 +755,7 @@ body {
     height: 200px;
   }
 
+  /* CTA BUTTONS */
   .cta-buttons {
     flex-direction: column;
     align-items: center;
@@ -762,6 +767,7 @@ body {
     max-width: 300px;
   }
 
+  /* PAÍSES */
   .countries-grid {
     gap: 1rem;
   }
@@ -771,26 +777,58 @@ body {
     height: 24px;
   }
 
-  .include-row,
-  .include-row.reverse {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+  /* INCLUDES SECTION - SOLUCIÓN DEFINITIVA */
+  .includes-section {
+    padding: 4rem 0;
   }
 
+  .includes-alternating {
+    display: block;
+  }
+
+  .include-row {
+    display: block;
+    margin-bottom: 4rem;
+    padding: 0;
+  }
+
+  .include-row.reverse {
+    display: block;
+  }
+
+  .include-row .include-image,
+  .include-row .include-text,
   .include-row.reverse .include-image,
   .include-row.reverse .include-text {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
     order: unset;
+  }
+
+  .include-img {
+    height: 200px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 2rem auto;
+    display: block;
   }
 
   .include-text {
     text-align: center;
   }
 
-  .include-placeholder {
-    height: 200px;
+  .include-text h3 {
+    font-size: 1.5rem;
   }
-  .include-img {
-    height: 200px;
+
+  .include-text p {
+    font-size: 1rem;
+  }
+
+  .include-text ul {
+    text-align: left;
+    max-width: 280px;
+    margin: 0 auto;
   }
 }
