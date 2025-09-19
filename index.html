@@ -257,10 +257,12 @@
             </div>
         </div>
     </section>
-     <!-- PAÍSES CON BANDERAS -->
+  <!-- PAÍSES CON BANDERAS Y MAPA -->
     <section class="countries-section">
         <div class="container">
-            <h2 class="countries-title">Alumnos de habla Hispana</h2>
+            <h2 class="countries-title">Alumnos de habla hispana</h2>
+            
+            <!-- Banderas como antes -->
             <div class="countries-grid">
                 <div class="country-item">
                     <svg class="country-flag" viewBox="0 0 40 30" fill="none">
@@ -359,8 +361,89 @@
                     <span class="country-name">Guatemala</span>
                 </div>
             </div>
+            
+            <!-- Mapa interactivo debajo -->
+            <div style="max-width: 900px; margin: 3rem auto;">
+                <div id="map" style="height: 450px; border-radius: 12px; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);"></div>
+            </div>
+            
+            <!-- Estadística debajo del mapa -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #9ca3af; font-size: 1.125rem; font-weight: 500;">
+                    Más de <span style="color: #4a90e2; font-weight: 700;">12 países</span> 
+                    conectados a través del método FRET GPS
+                </p>
+            </div>
         </div>
     </section>
+
+    <!-- Scripts de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Inicializar mapa con zoom más alejado para incluir España
+        var map = L.map('map').setView([15, -30], 2);
+        
+        // Añadir tiles del mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 18,
+        }).addTo(map);
+        
+        // Definir países con coordenadas
+        var paises = [
+            {nombre: "España", lat: 40.4168, lng: -3.7038},
+            {nombre: "México", lat: 19.4326, lng: -99.1332},
+            {nombre: "Guatemala", lat: 14.6349, lng: -90.5069},
+            {nombre: "Colombia", lat: 4.7110, lng: -74.0721},
+            {nombre: "Venezuela", lat: 10.4806, lng: -66.9036},
+            {nombre: "Ecuador", lat: -0.1807, lng: -78.4678},
+            {nombre: "Perú", lat: -12.0464, lng: -77.0428},
+            {nombre: "Bolivia", lat: -16.2902, lng: -63.5887},
+            {nombre: "Paraguay", lat: -25.2637, lng: -57.5759},
+            {nombre: "Uruguay", lat: -34.9011, lng: -56.1645},
+            {nombre: "Argentina", lat: -34.6118, lng: -58.3960},
+            {nombre: "Chile", lat: -33.4489, lng: -70.6693}
+        ];
+        
+        // Crear marcadores personalizados
+        paises.forEach(function(pais) {
+            var marker = L.circleMarker([pais.lat, pais.lng], {
+                radius: 10,
+                fillColor: "#4a90e2",
+                color: "#ffffff",
+                weight: 3,
+                opacity: 1,
+                fillOpacity: 0.9
+            }).addTo(map);
+            
+            // Añadir popup con el nombre del país
+            marker.bindPopup(`
+                <div style="text-align: center; font-weight: 600; color: #374151; padding: 5px;">
+                    <strong style="font-size: 1.1rem;">${pais.nombre}</strong><br>
+                    <span style="font-size: 0.875rem; color: #4a90e2;">Alumnos FRET GPS</span>
+                </div>
+            `);
+        });
+        
+        // Ajustar vista para que se vean todos los marcadores
+        setTimeout(function() {
+            var group = new L.featureGroup(map._layers);
+            if (Object.keys(group._layers).length > 0) {
+                map.fitBounds(group.getBounds().pad(0.1));
+            }
+        }, 100);
+        
+        // Controles de zoom más user-friendly
+        map.scrollWheelZoom.disable();
+        map.on('click', function() {
+            map.scrollWheelZoom.enable();
+        });
+        map.on('mouseout', function() {
+            map.scrollWheelZoom.disable();
+        });
+    </script>
       <!-- TESTIMONIOS CON VIDEOS Y BANDERAS -->    
     <section class="testimonials-section">
         <div class="container">
