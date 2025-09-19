@@ -844,4 +844,17 @@ body {
     max-width: 280px !important;
     margin: 0 auto !important;
   }
+   /* MÁXIMA ESPECIFICIDAD PARA GITHUB PAGES */
+  body .includes-section .container .includes-alternating .include-row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  body .includes-section .container .includes-alternating .include-row .include-text {
+    order: 1 !important;
+  }
+  
+  body .includes-section .container .includes-alternating .include-row .include-image {
+    order: 2 !important;
+  }
 }
